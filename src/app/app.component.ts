@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-w3-accordion';
+  
+  accordionClick(ev:any){
+          
+    ev.target.classList.toggle("active");
+    var panel = ev.target.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+      
+  }
+
+  constructor(){
+    
+  }
+
 }
